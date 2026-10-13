@@ -6,7 +6,6 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity
@@ -21,6 +20,9 @@ public class Perfil {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_perfil")
     private Integer id;
+
+    @Column(name = "id_cuenta")
+    private Integer idCuenta;
 
     @Column(name = "nombre", length = 100)
     private String nombre;
@@ -49,6 +51,6 @@ public class Perfil {
     @Column(name = "talla_pantalon", length = 10)
     private String tallaPantalon;
 
-    @Column(name = "talla_zapatos", precision = 4, scale = 1)
-    private BigDecimal tallaZapatos;
+    @Column(name = "talla_zapatos", length = 20)
+    private String tallaZapatos;
 }

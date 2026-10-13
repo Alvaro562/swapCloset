@@ -48,7 +48,7 @@ public class Prenda {
     @Column(name = "disponibilidad")
     private Boolean disponibilidad;
 
-    @Column(name = "permite_prestamo")
+    @Column(name = "permite_prest")
     private Boolean permitePrestamo;
 
     @Column(name = "permite_intercambio")

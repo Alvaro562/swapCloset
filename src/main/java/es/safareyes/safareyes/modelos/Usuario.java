@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "usuario")
+@Table(name = "cuenta")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -16,13 +16,10 @@ public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_usuario")
+    @Column(name = "id_cuenta")
     private Integer id;
 
-    @Column(name = "id_perfil")
-    private Integer idPerfil;
-
-    @Column(name = "username", length = 50)
+    @Column(name = "username", length = 100)
     private String username;
 
     @Column(name = "contrasena", length = 255)

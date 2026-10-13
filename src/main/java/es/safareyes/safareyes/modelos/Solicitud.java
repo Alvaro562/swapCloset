@@ -10,7 +10,7 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "solicitud")
+@Table(name = "solicitudes")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -22,7 +22,7 @@ public class Solicitud {
     @Column(name = "id_solicitud")
     private Integer id;
 
-    @Column(name = "id_solicitante")
+    @Column(name = "id_perfil_creador")
     private Integer idSolicitante;
 
     @Column(name = "tipo_solicitud", length = 20)

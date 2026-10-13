@@ -9,7 +9,7 @@ import lombok.Setter;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "valoracion")
+@Table(name = "valoraciones")
 @Getter
 @Setter
 @AllArgsConstructor
@@ -22,11 +22,11 @@ public class Valoracion {
     private Integer id;
 
     @ManyToOne
-    @JoinColumn(name = "id_autor")
+    @JoinColumn(name = "id_perfil_creador")
     private Perfil autor;
 
     @ManyToOne
-    @JoinColumn(name = "id_valorado")
+    @JoinColumn(name = "id_perfil_receptor")
     private Perfil valorado;
 
     @Column(name = "puntuacion")
