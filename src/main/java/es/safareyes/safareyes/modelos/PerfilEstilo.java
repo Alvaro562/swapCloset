@@ -14,11 +14,11 @@ import lombok.Setter;
 @NoArgsConstructor
 public class PerfilEstilo {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    @EmbeddedId
+    private PerfilEstiloId id;
 
     @ManyToOne
+    @MapsId("idPerfil")
     @JoinColumn(name = "id_perfil")
     private Perfil perfil;
 

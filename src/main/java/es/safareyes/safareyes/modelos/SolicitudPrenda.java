@@ -15,7 +15,7 @@ import lombok.Setter;
 public class SolicitudPrenda {
 
     @EmbeddedId
-    private Integer id;
+    private SolicitudPrendaId id;
 
     @ManyToOne
     @MapsId("idSolicitud")

@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Table(name = "prenda")
@@ -21,10 +22,11 @@ public class Prenda {
     @Column(name = "id_prenda")
     private Integer id;
 
-    @Column(name = "id_perfil")
-    private Integer idPerfil;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_perfil")
+    private Perfil perfil;
 
-    @ManyToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "id_categoria")
     private Categoria categoria;
 
@@ -54,4 +56,7 @@ public class Prenda {
 
     @Column(name = "fecha_publicacion")
     private LocalDateTime fechaPublicacion;
+
+    @OneToMany(mappedBy = "prenda")
+    private List<Foto> fotos;
 }
